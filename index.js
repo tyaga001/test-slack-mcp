@@ -126,27 +126,3 @@ function deleteReply(channelId, messageId, replyId) {
   }
 }
 
-// ---------- Test Run ----------
-console.log("\n📺 Initial Channels:");
-console.log(JSON.stringify(channels, null, 2));
-
-// Add a new channel
-const newChannel = addChannel("tech-talk");
-
-// Add a message
-const msg = addMessage(newChannel.id, "David", "Anyone tried Node.js 22 yet?");
-
-// Add a reply
-addReply(newChannel.id, msg.id, "Eve", "Yes! It's awesome!");
-
-// Delete a reply (for demo)
-if (msg.replies.length > 0) deleteReply(newChannel.id, msg.id, msg.replies[0].id);
-
-// Delete a message (for demo)
-deleteMessage(newChannel.id, msg.id);
-
-// Delete a channel (for demo)
-deleteChannel(newChannel.id);
-
-console.log("\n📦 Final Channels:");
-console.log(JSON.stringify(channels, null, 2));
